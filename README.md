@@ -1,5 +1,24 @@
 # Alchemy Bootstrap Template
 
+## Guess a Number App
+
+### HTML Elements
+* h1 with title - static
+* input for guess - static
+* submit button - static
+* result paragraph - dynamic
+
+### State
+* randomNum -- will be generated at the start of each game
+* userGuess -- will hold the value of the input field
+* numGuesses -- number of guesses -- incremented every time the user clicks the button OR starts at 4 and decrements
+* userMessage
+    - 'You're correct': userGuess === randomNum
+    - 'Guess too high': userGuess > randomNum
+    - 'Guess too low': userGuess < randomNum
+    - 'Invalid': userGuess > 20
+    - 'Out of guesses': numGuesses > 4
+
 ## Making a plan
 
 (bolded steps are mandatory, unbolded are for more advanced projects)

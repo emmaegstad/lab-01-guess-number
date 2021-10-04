@@ -6,7 +6,7 @@ let resultText = document.getElementById('result-text');
 
 let hint = "";
 let remainingGuesses = 4;
-const correctNum = getRandomInt(1, 21);
+let correctNum = getRandomInt(1, 21);
 console.log(correctNum);
 
 //used getRandomInt() from MDN
@@ -16,13 +16,11 @@ function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min) + min);
 }
 
-submitButton.addEventListener('click', () => {
-
+function onclick() {
   remainingGuesses--;
   remainingGuessText.innerText = `You have ${remainingGuesses} guesses left.`
 
   const userGuess = Number(guessInput.value);
-
   if (userGuess === correctNum) {
     resultText.innerText = "Correct! You win.";
     remainingGuessText.style.display = "none";
@@ -41,28 +39,24 @@ submitButton.addEventListener('click', () => {
     resultText.innerText = "Incorrect. Please try again.";
     resultText.innerText = `${hint} Please try again.`;
   }
+}
 
-  // else(userGuess > 20) -- display Invalid guess
-
-})
+submitButton.addEventListener('click', onclick);
 
 resetButton.addEventListener('click', () => {
-  //reset game
-})
+  submitButton.style.display = "block";
+  resetButton.style.display = "none";
+  resultText.innerText = "";
+  guessInput.value = '';
+  correctNum = getRandomInt(1, 21);
+  console.log(correctNum);
+  remainingGuesses = 4;
+  console.log(remainingGuesses);
+  remainingGuessText.innerText = `You have ${remainingGuesses} guesses left.`
+  remainingGuessText.style.display = "block";
+});
 
 
 
-
-
-// What state do I need
-// /* * randomNum -- will be generated at the start of each game
-// * userGuess -- will hold the value of the input field
-// * numGuesses -- number of guesses -- incremented every time the user clicks the button OR starts at 4 and decrements
-// * userMessage
-//     - 'You're correct': userGuess === randomNum
-//     - 'Guess too high': userGuess > randomNum
-//     - 'Guess too low': userGuess < randomNum
-//     - 'Invalid': userGuess > 20
-//     - 'Out of guesses': numGuesses > 4/*
 
 
