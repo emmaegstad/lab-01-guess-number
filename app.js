@@ -27,14 +27,14 @@ submitButton.addEventListener('click', () => {
   const userGuess = Number(guessInput.value);
   if (userGuess === correctNum) {
     timesWonCount++;
-    timesWon.innerText = `You have won ${timesWonCount} times.`;
+    timesWon.innerText = `Times won: ${timesWonCount}`;
     resultText.innerText = "Correct! You win.";
     remainingGuessText.style.display = "none";
     submitButton.style.display = "none";
     resetButton.style.display = "block";
   } else if (remainingGuesses === 0) {
     timesLostCount++;
-    timesLost.innerText = `You have lost ${timesLostCount} times.`;
+    timesLost.innerText = `Times lost: ${timesLostCount}`;
     resultText.innerText = "You lose. Out of guesses.";
     remainingGuessText.style.display = "none";
     submitButton.style.display = "none";
