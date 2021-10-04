@@ -3,10 +3,14 @@ const submitButton = document.getElementById('submit-button');
 const resetButton = document.getElementById('reset-button');
 let remainingGuessText = document.getElementById('remaining-guesses');
 let resultText = document.getElementById('result-text');
+let timesWon = document.getElementById('win-count');
+let timesLost = document.getElementById('lose-count');
 
 let hint = "";
 let remainingGuesses = 4;
 let correctNum = getRandomInt(1, 21);
+let timesWonCount = 0;
+let timesLostCount = 0;
 console.log(correctNum);
 
 //used getRandomInt() from MDN
@@ -16,17 +20,21 @@ function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min) + min);
 }
 
-function onclick() {
+submitButton.addEventListener('click', () => {
   remainingGuesses--;
   remainingGuessText.innerText = `You have ${remainingGuesses} guesses left.`
 
   const userGuess = Number(guessInput.value);
   if (userGuess === correctNum) {
+    timesWonCount++;
+    timesWon.innerText = `You have won ${timesWonCount} times.`;
     resultText.innerText = "Correct! You win.";
     remainingGuessText.style.display = "none";
     submitButton.style.display = "none";
     resetButton.style.display = "block";
   } else if (remainingGuesses === 0) {
+    timesLostCount++;
+    timesLost.innerText = `You have lost ${timesLostCount} times.`;
     resultText.innerText = "You lose. Out of guesses.";
     remainingGuessText.style.display = "none";
     submitButton.style.display = "none";
@@ -39,9 +47,7 @@ function onclick() {
     resultText.innerText = "Incorrect. Please try again.";
     resultText.innerText = `${hint} Please try again.`;
   }
-}
-
-submitButton.addEventListener('click', onclick);
+});
 
 resetButton.addEventListener('click', () => {
   submitButton.style.display = "block";
@@ -51,7 +57,6 @@ resetButton.addEventListener('click', () => {
   correctNum = getRandomInt(1, 21);
   console.log(correctNum);
   remainingGuesses = 4;
-  console.log(remainingGuesses);
   remainingGuessText.innerText = `You have ${remainingGuesses} guesses left.`
   remainingGuessText.style.display = "block";
 });

@@ -1,19 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Press+Start+2P&display=swap');
+
 body {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-top: 150px;
-  background-image: linear-gradient(to right, rgb(240, 178, 178) , rgb(100, 158, 206));
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  background-image: linear-gradient(to right, rgb(100, 158, 206), rgb(240, 178, 178));
+  font-family: 'Open Sans', sans-serif;
+}
+
+h1 {
+  font-family: 'Press Start 2P', cursive;
+  color: pink;
+  font-size: 3vh;
+}
+
+#rules {
+  font-style: italic;
 }
 
 main {
-  max-width: 500px;
+  background-image: linear-gradient(to right, rgb(240, 178, 178) , rgb(100, 158, 206));
+  max-width: 600px;
+  padding: 50px;  
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
+#guess-input {
+  background-color: rgb(245, 213, 219);
+}
+
 #reset-button {
   display: none;
+}
+
+#win-lose {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  padding: 10px;
+  background-color: rgb(100, 158, 206);
 }
