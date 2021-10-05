@@ -25,27 +25,31 @@ submitButton.addEventListener('click', () => {
     remainingGuessText.innerText = `You have ${remainingGuesses} guesses left.`;
 
     const userGuess = Number(guessInput.value);
-    if (userGuess === correctNum) {
-        timesWonCount++;
-        timesWon.innerText = `Times won: ${timesWonCount}`;
-        resultText.innerText = 'Correct! You win.';
-        remainingGuessText.style.display = 'none';
-        submitButton.style.display = 'none';
-        resetButton.style.display = 'block';
-    } else if (remainingGuesses === 0) {
-        timesLostCount++;
-        timesLost.innerText = `Times lost: ${timesLostCount}`;
-        resultText.innerText = 'You lose. Out of guesses.';
-        remainingGuessText.style.display = 'none';
-        submitButton.style.display = 'none';
-        resetButton.style.display = 'block';
-    } else if (userGuess > correctNum) {
-        hint = 'Too high!';
-        resultText.innerText = `${hint} Please try again.`;
-    } else if (userGuess < correctNum) {
-        hint = 'Too low!';
-        resultText.innerText = 'Incorrect. Please try again.';
-        resultText.innerText = `${hint} Please try again.`;
+
+    if (isNaN(userGuess) !== true) {
+
+        if (userGuess === correctNum) {
+            timesWonCount++;
+            timesWon.innerText = `TIMES WON: ${timesWonCount}`;
+            resultText.innerText = 'Correct! You win.';
+            remainingGuessText.style.display = 'none';
+            submitButton.style.display = 'none';
+            resetButton.style.display = 'block';
+        } else if (remainingGuesses === 0) {
+            timesLostCount++;
+            timesLost.innerText = `TIMES LOST: ${timesLostCount}`;
+            resultText.innerText = 'No more guesses. You lose.';
+            // remainingGuessText.style.display = 'none';
+            submitButton.style.display = 'none';
+            resetButton.style.display = 'block';
+        } else if (userGuess > correctNum) {
+            hint = 'Too high!';
+            resultText.innerText = `${hint} Try again.`;
+        } else if (userGuess < correctNum) {
+            hint = 'Too low!';
+            resultText.innerText = 'Incorrect. Please try again.';
+            resultText.innerText = `${hint} Try again.`;
+        }
     }
 });
 
