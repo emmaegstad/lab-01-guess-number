@@ -64,8 +64,3 @@ resetButton.addEventListener('click', () => {
     remainingGuessText.innerText = `You have ${remainingGuesses} guesses left.`;
     remainingGuessText.style.display = 'block';
 });
-
-
-
-
-
