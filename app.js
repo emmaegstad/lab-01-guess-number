@@ -11,7 +11,6 @@ let remainingGuesses = 4;
 let correctNum = getRandomInt(1, 21);
 let timesWonCount = 0;
 let timesLostCount = 0;
-console.log(correctNum);
 
 //used getRandomInt() from MDN
 function getRandomInt(min, max) {
@@ -59,7 +58,6 @@ resetButton.addEventListener('click', () => {
     resultText.innerText = '';
     guessInput.value = '';
     correctNum = getRandomInt(1, 21);
-    console.log(correctNum);
     remainingGuesses = 4;
     remainingGuessText.innerText = `You have ${remainingGuesses} guesses left.`;
     remainingGuessText.style.display = 'block';
