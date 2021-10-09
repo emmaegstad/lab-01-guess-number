@@ -1,13 +1,13 @@
-let timesWon = document.getElementById('win-count');
-let timesLost = document.getElementById('lose-count');
-let hint = '';
-let timesWonCount = 0;
-let timesLostCount = 0;
 const guessInput = document.getElementById('guess-input');
 const submitButton = document.getElementById('submit-button');
 const resetButton = document.getElementById('reset-button');
 let remainingGuessText = document.getElementById('remaining-guesses');
 let resultText = document.getElementById('result-text');
+let timesWon = document.getElementById('win-count');
+let timesLost = document.getElementById('lose-count');
+let hint = '';
+let timesWonCount = 0;
+let timesLostCount = 0;
 let remainingGuesses = 4;
 let correctNum = getRandomInt(1, 21);
 
@@ -51,7 +51,6 @@ submitButton.addEventListener('click', () => {
 
     const userGuess = Number(guessInput.value);
     if (isNaN(userGuess) !== true) {
-
         if (userGuess === correctNum) {
             correctGuess();
         } else if (remainingGuesses === 0) {

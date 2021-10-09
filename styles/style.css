@@ -1,83 +1,91 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Press+Start+2P&display=swap');
 
 body {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 150px;
-  background-image: linear-gradient(to right, rgb(100, 158, 206), rgb(240, 178, 178));
-  font-family: 'Open Sans', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 150px;
+    background-image: linear-gradient(
+        to right,
+        rgb(100, 158, 206),
+        rgb(240, 178, 178)
+    );
+    font-family: 'Open Sans', sans-serif;
 }
 
 h1 {
-  font-family: 'Press Start 2P', cursive;
-  color: pink;
-  font-size: 3vh;
+    font-family: 'Press Start 2P', cursive;
+    color: pink;
+    font-size: 3vh;
 }
 
 #rules {
-  font-style: italic;
-  text-align: center;
-  padding-bottom: 25px;
-  color: white;
+    font-style: italic;
+    text-align: center;
+    padding-bottom: 25px;
+    color: white;
 }
 
 main {
-  background-image: linear-gradient(to right, rgb(240, 178, 178) , rgb(100, 158, 206));
-  width: 800px;
-  padding: 50px;  
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+    background-image: linear-gradient(
+        to right,
+        rgb(240, 178, 178),
+        rgb(100, 158, 206)
+    );
+    width: 800px;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 #guess-input {
-  background-color: rgb(245, 213, 219);
-  border-style: none;
-  padding: 5px;
-  margin-bottom: 25px;
+    background-color: rgb(245, 213, 219);
+    border-style: none;
+    padding: 5px;
+    margin-bottom: 25px;
 }
 
 #reset-button {
-  display: none;
+    display: none;
 }
 
-button { 
-  background-color:  rgb(100, 158, 206);
-  border-color:  rgb(100, 158, 206);
-  font-weight: bold;
-  color: white;
-  padding: 5px;
-  margin-bottom: 50px;
-  font-size: 1vh;
-  font-family: 'Press Start 2P', cursive;
+button {
+    background-color: rgb(100, 158, 206);
+    border-color: rgb(100, 158, 206);
+    font-weight: bold;
+    color: white;
+    padding: 5px;
+    margin-bottom: 50px;
+    font-size: 1vh;
+    font-family: 'Press Start 2P', cursive;
 }
 
-#remaining-guesses { 
-  font-family: 'Press Start 2P', cursive;
-  color: white;
-  font-size: 1vh;
-  margin-bottom: 50px;
+#remaining-guesses {
+    font-family: 'Press Start 2P', cursive;
+    color: white;
+    font-size: 1vh;
+    margin-bottom: 50px;
 }
 
 #result-text {
-  font-family: 'Press Start 2P', cursive;
-  color: white;
-  font-size: 1.5vh;
-  margin-bottom: 25px;
+    font-family: 'Press Start 2P', cursive;
+    color: white;
+    font-size: 1.5vh;
+    margin-bottom: 25px;
 }
 
 #win-lose {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  border-radius: 50%;
-  width: 150px;
-  height: 150px;
-  padding: 10px;
-  background-color: rgb(100, 158, 206);
-  color: white;
-  font-style: italic;
-  border: 3px pink solid;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    padding: 10px;
+    background-color: rgb(100, 158, 206);
+    color: white;
+    font-style: italic;
+    border: 3px pink solid;
 }
